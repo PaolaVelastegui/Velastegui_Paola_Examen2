@@ -28,6 +28,7 @@ class RegisterLoginPage extends StatelessWidget {
                         return null;
                       },
                     ),
+                    
                     TextFormField(
                       controller: _.passwordController,
                       inputFormatters: <TextInputFormatter>[
@@ -37,6 +38,7 @@ class RegisterLoginPage extends StatelessWidget {
                       validator: (String? value) {
                         if (value == null || value.isEmpty) {
                           return 'Please enter some text';
+                
                         }
                         return null;
                       },
