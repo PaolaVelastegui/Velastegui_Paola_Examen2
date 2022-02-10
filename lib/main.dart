@@ -15,7 +15,6 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   //C1:57:3C:43:1B:B2:8E:6D:C2:A6:51:CD:8C:C4:34:44:22:6F:1D:9F
 
-  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
