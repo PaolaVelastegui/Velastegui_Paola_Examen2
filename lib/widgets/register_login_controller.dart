@@ -10,6 +10,7 @@ class LoginRegisterController extends GetxController{
   
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+   final TextEditingController cedulaController = TextEditingController();
 
   bool? success;
   String? userEmail = '';

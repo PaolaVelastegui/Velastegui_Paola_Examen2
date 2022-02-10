@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:app_sistema_ventas/widgets/register_login_controller.dart';
+import 'package:flutter/services.dart';
 
 class RegisterLoginPage extends StatelessWidget {
   final controller = Get.put(LoginRegisterController());
@@ -29,6 +30,9 @@ class RegisterLoginPage extends StatelessWidget {
                     ),
                     TextFormField(
                       controller: _.passwordController,
+                      inputFormatters: <TextInputFormatter>[
+                        FilteringTextInputFormatter.allow(RegExp(r'^(?=(?:.\d){2})(?=(?:.[A-Z]){1})(?=(?:.*[a-z]){1})\S{6,10}$')),
+                      ],
                       decoration: const InputDecoration(labelText: 'Password'),
                       validator: (String? value) {
                         if (value == null || value.isEmpty) {
@@ -37,6 +41,16 @@ class RegisterLoginPage extends StatelessWidget {
                         return null;
                       },
                       obscureText: true,
+                    ),
+                     TextFormField(
+                      controller: _.cedulaController,
+                      decoration: const InputDecoration(labelText: 'Cedula'),
+                      validator: (String? value) {
+                        if (value!.isEmpty) {
+                          return 'Please enter some text';
+                        }
+                        return null;
+                      },
                     ),
                     Container(
                       padding: const EdgeInsets.only(top: 16.0),
