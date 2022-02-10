@@ -58,37 +58,5 @@ void registerUserVP(BuildContext context){
           builder: (BuildContext context) => RegisterLoginPage()));
 }
 
-/*
-void signInWithGoogle() async {
-    try {
-      UserCredential userCredential;
-  
-      final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
-      final GoogleSignInAuthentication? googleAuth = 
-        await googleUser?.authentication;
-      final OAuthCredential googleAuthCredential = 
-      GoogleAuthProvider.credential(
-        accessToken: googleAuth?.accessToken,
-        idToken: googleAuth?.idToken,
-      );
-
-        userCredential = await _auth.signInWithCredential(googleAuthCredential);
-  
-      final user = userCredential.user;
-      Get.snackbar('Holas', 'Sign In ${user?.uid} with Google');
-      print('Ingreso Bien');
-      Future.delayed(
-          Duration(seconds: 2),
-          (){
-            Get.toNamed("/foodpage");
-          },
-      );
-    } catch (e) {
-      print(e);
-      Get.snackbar('Fallo', 'Failed to sign in with Google: $e',
-      snackPosition: SnackPosition.BOTTOM);
-    }
-    }
-*/
     
   

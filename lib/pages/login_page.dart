@@ -33,6 +33,13 @@ class LoginPage extends StatelessWidget {
                           ),
                           alignment: Alignment.center,
                         ),
+                        Container(
+                          child: const Text(
+                            'Usuario:ejemplo@uta.edu.com - Contraseña:Hola#1',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          alignment: Alignment.center,
+                        ),
                         SizedBox(
                           height: 50,
                         ),

@@ -19,7 +19,7 @@ class UserService{
     QuerySnapshot querySnapshot;
     try {
       querySnapshot = await database!.collection('Usuarios').get();
-      print('llega');
+      print('llego');
       if (querySnapshot.docs.isNotEmpty) {
         for (var doc in querySnapshot.docs) {
           UserModel? user;
@@ -28,12 +28,12 @@ class UserService{
                 doc.id, doc['usuario'], doc['password'], doc['cedula']);
             docs.add(user);
           }
-          print(doc['usuario']);
+          
         }
       }
       //print(prods);
     } catch (e) {
-      print("Lo siento :C");
+      print("No es posible");
     }
     return docs;
 }
