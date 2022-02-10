@@ -190,7 +190,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                      Text(
                                       'Stock: ${_productsModel[index].maxQuantity}',
                                       textAlign: TextAlign.center,
-                                      style: TextStyle(fontSize: 16.0),
+                                      style: TextStyle(fontSize: 17.0),
                                     ),
                                     Row(
                                       mainAxisAlignment:
