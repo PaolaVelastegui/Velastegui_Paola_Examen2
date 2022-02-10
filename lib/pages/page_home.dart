@@ -123,6 +123,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     child: CachedNetworkImage(
                                         imageUrl:
                                             '${_productsModel[index].image}' +
+                          
                                                 '?alt=media',
                                         fit: BoxFit.cover,
                                         placeholder: (_, __) {

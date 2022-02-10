@@ -52,7 +52,6 @@ UserService serviceUser = new UserService();
     Get.toNamed("/home");
   }
 }
-
 void registerUserVP(BuildContext context){
    Navigator.of(context).push(new MaterialPageRoute(
           builder: (BuildContext context) => RegisterLoginPage()));
