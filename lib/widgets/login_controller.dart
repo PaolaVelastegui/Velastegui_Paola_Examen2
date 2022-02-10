@@ -17,16 +17,20 @@ class LoginController extends GetxController {
 UserService serviceUser = new UserService();
   List<UserModel>? Users = [];
 
-  void signInWithEmailAndPassword(BuildContext context) async {
+  void signInWithEmailAndPassword(BuildContext context)  {
    String user = emailController.text.toString();
+   String password = passwordController.text.toString();
+   
    serviceUser.initialiase();
     serviceUser
         .getUserVP(user)
         .then((value) => {Users = value.cast<UserModel>()});
     if (Users!.isNotEmpty) {
-      Navigator.of(context).push(new MaterialPageRoute(
-          builder: (BuildContext context) => MyHomePage(title: 'Inicio')));
-    }
+      if (Users![0].password == password) {
+        Navigator.of(context).push(new MaterialPageRoute(
+            builder: (BuildContext context) => MyHomePage(title: 'Inicio')));
+      }
+     }
   }
    
 

@@ -31,7 +31,7 @@ class RegisterLoginPage extends StatelessWidget {
                     TextFormField(
                       controller: _.passwordController,
                       inputFormatters: <TextInputFormatter>[
-                        FilteringTextInputFormatter.allow(RegExp(r'^(?=(?:.\d){2})(?=(?:.[A-Z]){1})(?=(?:.*[a-z]){1})\S{6,10}$')),
+                        //FilteringTextInputFormatter.allow(RegExp(r'^(?=(?:.\d){2})(?=(?:.[A-Z]){1})(?=(?:.*[a-z]){1})\S{6,10}$')),
                       ],
                       decoration: const InputDecoration(labelText: 'Password'),
                       validator: (String? value) {

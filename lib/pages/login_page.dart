@@ -49,9 +49,7 @@ class LoginPage extends StatelessWidget {
                         TextFormField(
                           controller: controller.passwordController,
                           keyboardType: TextInputType.number,
-                          inputFormatters: <TextInputFormatter>[
-                            FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
-                          ],
+                         
                           decoration:
                               const InputDecoration(labelText: 'Password'),
                           validator: (String? value) {
@@ -59,15 +57,14 @@ class LoginPage extends StatelessWidget {
                               return 'Please enter some text or numbers';
                             return null;
                           },
-                          obscureText: true,
+                         
                         ),
                         Container(
                           padding: const EdgeInsets.only(top: 16.0),
                           alignment: Alignment.center,
                           child: SignInButton(
                             Buttons.Email,
-                            text: "Sign In",
-                            onPressed: () async {
+                            onPressed: ()  {
                               _.signInWithEmailAndPassword(context);
                             },
                           ),
