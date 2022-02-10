@@ -79,7 +79,7 @@ class LoginPage extends StatelessWidget {
                             Buttons.Hotmail,
                             text: "Registrarse",
                             onPressed: ()  {
-                             // registerUserVP(context);
+                              registerUserVP(context);
                             },
                           ),
                         )

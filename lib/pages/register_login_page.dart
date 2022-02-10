@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:app_sistema_ventas/widgets/register_login_controller.dart';
 
 class RegisterLoginPage extends StatelessWidget {
-  final controller = Get.put(LoginRegisterController);
+  final controller = Get.put(LoginRegisterController());
 
   @override
   Widget build(BuildContext context) {
