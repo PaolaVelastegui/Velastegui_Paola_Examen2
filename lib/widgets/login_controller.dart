@@ -1,5 +1,7 @@
+import 'package:app_sistema_ventas/models/user_modelVP.dart';
 import 'package:app_sistema_ventas/pages/page_home.dart';
 import 'package:app_sistema_ventas/pages/register_login_page.dart';
+import 'package:app_sistema_ventas/services/service_userVP.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -12,29 +14,21 @@ class LoginController extends GetxController {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
+UserService serviceUser = new UserService();
+  List<UserModel>? Users = [];
+
   void signInWithEmailAndPassword(BuildContext context) async {
-    try {
+   String user = emailController.text.toString();
+   serviceUser.initialiase();
+    serviceUser
+        .getUserVP(user)
+        .then((value) => {Users = value.cast<UserModel>()});
+    if (Users!.isNotEmpty) {
       Navigator.of(context).push(new MaterialPageRoute(
           builder: (BuildContext context) => MyHomePage(title: 'Inicio')));
-      /*
-      final User user = (await _auth.signInWithEmailAndPassword(
-        email: emailController.text,
-        password: passwordController.text,
-      ))
-          .user!;
-      Get.snackbar('Hola', 'Ingreso Exitoso!');
-      Future.delayed(
-        Duration(seconds: 2),
-        () {
-          print('Ingreso Correcto');
-        },
-      );
-      */
-    } catch (e) {
-      Get.snackbar('Fallo', 'Ingreso Incorrecto!',
-          snackPosition: SnackPosition.BOTTOM);
     }
   }
+   
 
   void _signOut() async {
     await _auth.signOut();
