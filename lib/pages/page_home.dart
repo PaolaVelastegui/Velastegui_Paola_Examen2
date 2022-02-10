@@ -187,6 +187,11 @@ class _MyHomePageState extends State<MyHomePage> {
                                     SizedBox(
                                       height: 15,
                                     ),
+                                     Text(
+                                      'Stock: ${_productsModel[index].maxQuantity}',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(fontSize: 16.0),
+                                    ),
                                     Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
@@ -194,11 +199,6 @@ class _MyHomePageState extends State<MyHomePage> {
                                         SizedBox(
                                           height: 25,
                                         ),
-                                      Text(
-                                      'Cantidad: ${_productsModel[index].maxQuantity}',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(fontSize: 10.0),
-                                    ),
                                         Text(
                                           '${_productsModel[index].price.toString()} \$',
                                           style: TextStyle(
