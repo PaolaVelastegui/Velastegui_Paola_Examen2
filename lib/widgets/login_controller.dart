@@ -1,4 +1,5 @@
 import 'package:app_sistema_ventas/pages/page_home.dart';
+import 'package:app_sistema_ventas/pages/register_login_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -52,6 +53,11 @@ class LoginController extends GetxController {
         snackPosition: SnackPosition.BOTTOM);
     Get.toNamed("/home");
   }
+}
+
+void registerUser(BuildContext context){
+   Navigator.of(context).push(new MaterialPageRoute(
+          builder: (BuildContext context) => RegisterLoginPage()));
 }
 
 /*

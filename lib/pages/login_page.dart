@@ -76,10 +76,10 @@ class LoginPage extends StatelessWidget {
                           padding: const EdgeInsets.only(top: 16.0),
                           alignment: Alignment.center,
                           child: SignInButton(
-                            Buttons.GoogleDark,
-                            text: "Google",
-                            onPressed: () async {
-                              //signInWithGoogle();
+                            Buttons.Hotmail,
+                            text: "Registrarse",
+                            onPressed: ()  {
+                              registerUser(context);
                             },
                           ),
                         )
